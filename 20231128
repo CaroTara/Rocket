@@ -1,0 +1,266 @@
+-- METAS ROCKET
+-- La tabla que usamos de input está en el enlace https://docs.google.com/spreadsheets/d/1keOrAa5lZujj5L3K9WN7Msx9RbjahisdiXh4ljvvYh4/edit#gid=1214661643 y la hoja 'Proyección Desembolsos'
+-- De esta base solo vamos a tomar el correo, la fecha de inicio acordada para el contrato del rocket y la meta que deben cumplir de desembolsos
+-- Es importante revisar que los formatos de las tablas estén correctos y los nombres si llega a caerse el tablero
+WITH metas AS (
+-- AGOSTO
+SELECT
+-- Aquí trasponemos las columnas de fecha a una sola columna y en otra guardamos la fecha para cada broker y su fecha de inicio respectiva, esto se repite para cada mes
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+_01_08_2023 AS meta,
+CAST('2023-08-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+UNION ALL
+-- SEPTIEMBRE
+SELECT
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+-- Aquí casteamos la fecha y removemos los . que trae desde la base
+CAST (REGEXP_REPLACE(_01_09_2023, r'\.', '') AS INT64) AS meta,
+CAST('2023-09-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+UNION ALL
+-- OCTUBRE
+SELECT
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+-- Aquí casteamos la fecha y removemos los . que trae desde la base
+CAST (REGEXP_REPLACE(_01_10_2023, r'\.', '') AS INT64) AS meta,
+CAST('2023-10-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+UNION ALL
+-- NOVIEMBRE
+SELECT
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+-- Aquí casteamos la fecha y removemos los . que trae desde la base
+CAST (REGEXP_REPLACE(_01_11_2023, r'\.', '') AS INT64) AS meta,
+CAST('2023-11-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+UNION ALL
+--DICIEMBRE
+SELECT
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+-- Aquí casteamos la fecha y removemos los . que trae desde la base
+CAST (REGEXP_REPLACE(_01_12_2023, r'\.', '') AS INT64) AS meta,
+CAST('2023-12-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+UNION ALL
+--ENERO 2024
+SELECT
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+-- Aquí casteamos la fecha y removemos los . que trae desde la base
+CAST (REGEXP_REPLACE(_01_01_2024, r'\.', '') AS INT64) AS meta,
+CAST('2024-01-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+UNION ALL
+--FEBRERO 2024
+SELECT
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+-- Aquí casteamos la fecha y removemos los . que trae desde la base
+CAST (REGEXP_REPLACE(_01_02_2024, r'\.', '') AS INT64) AS meta,
+CAST('2024-02-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+UNION ALL
+--MARZO 2024
+SELECT
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+-- Aquí casteamos la fecha y removemos los . que trae desde la base
+CAST (REGEXP_REPLACE(_01_03_2024, r'\.', '') AS INT64) AS meta,
+CAST('2024-03-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+UNION ALL
+--ABRIL 2024
+SELECT
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+-- Aquí casteamos la fecha y removemos los . que trae desde la base
+CAST (REGEXP_REPLACE(_01_04_2024, r'\.', '') AS INT64) AS meta,
+CAST('2024-04-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+UNION ALL
+--MAYO 2024
+SELECT
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+-- Aquí casteamos la fecha y removemos los . que trae desde la base
+CAST (REGEXP_REPLACE(_01_05_2024, r'\.', '') AS INT64) AS meta,
+CAST('2024-05-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+UNION ALL
+--JUNIO 2024
+SELECT
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+-- Aquí casteamos la fecha y removemos los . que trae desde la base
+CAST (REGEXP_REPLACE(_01_06_2024, r'\.', '') AS INT64) AS meta,
+CAST('2024-06-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+UNION ALL
+--JULIO 2024
+SELECT
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+-- Aquí casteamos la fecha y removemos los . que trae desde la base
+CAST (REGEXP_REPLACE(_01_07_2024, r'\.', '') AS INT64) AS meta,
+CAST('2024-07-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+UNION ALL
+--AGOSTO 2024
+SELECT
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+-- Aquí casteamos la fecha y removemos los . que trae desde la base
+CAST (REGEXP_REPLACE(_01_08_2024, r'\.', '') AS INT64) AS meta,
+CAST('2024-08-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+UNION ALL
+--SEPTIEMBRE 2024
+SELECT
+lower(correo) as correo,
+DATE(Mes_de_Inicio___Mes_1_) AS mes_inicio,
+-- Aquí casteamos la fecha y removemos los . que trae desde la base
+CAST (REGEXP_REPLACE(_01_09_2024, r'\.', '') AS INT64) AS meta,
+CAST('2024-09-01' AS DATE) AS fecha
+FROM `papyrus-delivery-data.habicredit.nuevas_metas_rocket` WHERE correo is not null
+)
+
+-- BASE CUMPLIMIENTO ROCKET
+-- Esta base se crea para mapear el desempeño de los Brokers del proyecto Rocket por mes, es un consolidado de radicaciones, aprobaciones y desembolsos
+-- Unimos el modelo de datos con el input de rocket para únicamente ver los correos que corresponden y las fechas desde que inició el proyecto (Julio 2023)
+-- El input de correos viene de este archivo https://docs.google.com/spreadsheets/d/1g6OplzXwrZOtJdqMJ28bmGAP9xV0tjij1BPnHGwr4cA/edit?resourcekey#gid=1824588411
+, base_rocket AS (
+SELECT distinct
+modelo.*,
+-- Estos Brokers cuantan con una negociación especial, pues es un grupo asociado a un solo correo
+case when correo_de_agrupacion is null then lower(base_rocket.correo_de_radicacion_broker) else lower(correo_de_agrupacion) end as correo_final,
+tipo_rocket,
+FROM  `papyrus-master.liquidity_co_dwh.liquidity_habicredit_general_co_dwh` AS modelo
+LEFT JOIN `papyrus-delivery-data.habicredit.input_base_brokers_rocket` AS base_rocket
+  ON LOWER(modelo.correo_broker)=LOWER(base_rocket.correo_de_radicacion_broker)
+WHERE base_rocket.correo_de_radicacion_broker is not null
+AND   DATE(fecha_radicacion) > DATE('2023-07-01')
+AND   (DATE(fecha_credito_aprobado_rad) > DATE('2023-07-01') OR fecha_credito_aprobado_rad IS NULL)
+)
+-- Creamos el consolidado de radicaciones, aprobaciones y desembolsos con el mismo campo de mes
+, uniones AS (
+SELECT
+correo_final AS correo_broker,
+LOWER (correo_director_comercial) AS correo_director_comercial,
+DATE_TRUNC(fecha_radicacion, MONTH) AS mes,
+'Radicaciones' AS tipo,
+COUNT (fecha_radicacion) AS numero,
+SUM (monto_solicitado) AS monto
+FROM base_rocket GROUP BY 1,2,3
+UNION ALL
+SELECT
+correo_final AS correo_broker,
+LOWER (correo_director_comercial) AS correo_director_comercial,
+DATE_TRUNC(fecha_credito_aprobado_rad, MONTH) AS mes,
+'Aprobaciones' AS tipo,
+COUNT (fecha_credito_aprobado_rad) AS numero,
+SUM (monto_aprobado) AS monto
+FROM base_rocket GROUP BY 1,2,3
+UNION ALL
+SELECT
+correo_final AS correo_broker,
+LOWER (correo_director_comercial) AS correo_director_comercial,
+DATE_TRUNC(fecha_desembolso, MONTH) AS mes,
+'Desembolsos' AS tipo,
+COUNT (fecha_desembolso) AS numero,
+SUM (monto_desembolso) AS monto
+FROM base_rocket GROUP BY 1,2,3
+)
+--Ahora ordenamos el consolidado anterior
+, desempeno AS (
+SELECT
+  mes,
+  correo_broker,
+  correo_director_comercial,
+  SUM(CASE WHEN tipo = 'Radicaciones' THEN numero ELSE 0 END) AS radicaciones,
+  SUM(CASE WHEN tipo = 'Aprobaciones' THEN numero ELSE 0 END) AS aprobaciones,
+  SUM(CASE WHEN tipo = 'Desembolsos' THEN numero ELSE 0 END) AS desembolsos,
+  SUM(CASE WHEN tipo = 'Radicaciones' THEN monto ELSE 0 END) AS monto_radicado,
+  SUM(CASE WHEN tipo = 'Aprobaciones' THEN monto ELSE 0 END) AS monto_aprobado,
+  SUM(CASE WHEN tipo = 'Desembolsos' THEN monto ELSE 0 END) AS monto_desembolso
+FROM uniones
+GROUP BY 1,2,3
+)
+, medidas AS (
+-- Se calculan las medidas descriptivas del conjunto de datos
+select
+mes,
+avg(monto_radicado) as AVG_R,
+avg(monto_desembolso) as AVG_D,
+from desempeno as t
+GROUP BY 1
+)
+-- QUERY FINAL
+SELECT
+    MAX(tipo_rocket) AS tipo_rocket,
+    metas.fecha as mes,
+    metas.correo as correo_broker,
+    desempeno.correo_director_comercial,
+    desempeno.radicaciones,
+    desempeno.aprobaciones,
+    desempeno.desembolsos,
+    desempeno.monto_radicado,
+    desempeno.monto_aprobado,
+    desempeno.monto_desembolso,
+-- Aquí calculo la meta mes a mes restando del acumulado el mes anterior
+    metas.meta AS meta_desembolso,--- metas2.meta 
+-- Estas metas de radicaciones fueron dadas por negocio (20 para Top y 10 para Medio)
+    CASE
+      WHEN metas.mes_inicio IS NULL OR metas.mes_inicio > metas.fecha THEN 0
+      WHEN MAX(tipo_rocket) = 'Top' THEN 20
+      ELSE 10
+    END AS meta_radicaciones,
+    CASE
+      WHEN metas.mes_inicio IS NULL OR metas.mes_inicio > metas.fecha THEN 0
+      WHEN MAX(tipo_rocket) = 'Top' THEN 20 * 0.6
+      ELSE 10 * 0.6
+    END AS meta_aprobaciones,
+    metas.mes_inicio,
+    date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) as meses_contrato,
+    case when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) <= 1 then 0
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 2 then 0
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 3 then 600000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 4 then 1000000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 5 then 1200000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 6 then 1400000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 7 then 1600000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 8 then 1600000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 9 then 1600000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 10 then 1800000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 11 then 1800000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 12 then 1800000000
+    end as meta_d_modelo_comercial,
+case when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 1 then 0
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 2 then 0
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 3 then 600000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 4 then 1000000000+600000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 5 then 1200000000+1000000000+600000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 6 then 1400000000+1200000000+1000000000+600000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 7 then 1600000000+1400000000+1200000000+1000000000+600000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 8 then 1600000000+1600000000+1400000000+1200000000+1000000000+600000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 9 then 1600000000+1600000000+1600000000+1400000000+1200000000+1000000000+600000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 10 then 1800000000+1600000000+1600000000+1600000000+1400000000+1200000000+1000000000+600000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 11 then 1800000000+1800000000+1600000000+1600000000+1600000000+1400000000+1200000000+1000000000+600000000
+    when date_diff(date(date_trunc(current_date(),month)),metas.mes_inicio,month) = 12 then 1800000000+1800000000+1800000000+1600000000+1600000000+1600000000+1400000000+1200000000+1000000000+600000000
+    end as meta_d_modelo_comercial_acumulada,
+    AVG_R,
+    AVG_D
+FROM metas 
+LEFT JOIN desempeno ON desempeno.mes = metas.fecha AND desempeno.correo_broker = metas.correo
+-- Este Join lo hago para poder descomponer la meta de desembolso que se encuentra acuumulada para poder restar la del mes anterior
+LEFT JOIN metas as metas2 ON metas.correo = metas2.correo AND metas2.fecha = DATE_SUB(metas.fecha, INTERVAL 1 month)
+LEFT JOIN base_rocket ON base_rocket.correo_final = desempeno.correo_broker
+LEFT JOIN medidas ON medidas.mes =metas.fecha
+WHERE metas.fecha <= date_trunc(current_date(), month)
+GROUP BY 2,3,4,5,6,7,8,9,10,11,AVG_R,AVG_D,metas.mes_inicio
+order by 2
